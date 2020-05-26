@@ -34,6 +34,6 @@ public class Email {
                 "letterEmail='" + letterEmail + '\'' +
                 ", letterSubject='" + letterSubject + '\'' +
                 ", letterDecriprion='" + letterDescription + '\'' +
-                '}';
+                '}' +"\n" ;
     }
 }

@@ -1,6 +1,7 @@
 package com.it.tests;
 
 
+import com.it.Emails.EmailFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -10,6 +11,9 @@ public class MyTest extends BaseTest{
     public void test1()  {
 
         /*System.out.println(UserFactory.getRandomUsers(10));*/
+        /*System.out.println(EmailFactory.getRandomEmails(10));*/
+
+
         app.login.login(validUser);
         Assert.assertEquals(app.dashboard.getLbUserEmail(), validUser.email);
         app.dashboard.btnClickCreateEmail();
@@ -18,6 +22,7 @@ public class MyTest extends BaseTest{
         app.statusEmail.clickCheckMails();
         app.dashboard.btnСlickRowFirstNewLetter();
         Assert.assertEquals(app.viewEmail.getEmailBody(), sendEmail);
+
 
 
 
