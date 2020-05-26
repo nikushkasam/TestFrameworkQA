@@ -1,6 +1,6 @@
 package com.it.pages;
 
-import com.it.Emails.Email;
+import com.it.emails.Email;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 

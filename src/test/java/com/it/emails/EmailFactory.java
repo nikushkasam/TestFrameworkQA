@@ -1,7 +1,6 @@
-package com.it.Emails;
+package com.it.emails;
 
 
-import com.it.users.User;
 import com.it.utils.QAUtils;
 
 import java.util.List;

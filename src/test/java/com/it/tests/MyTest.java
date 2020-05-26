@@ -20,7 +20,7 @@ public class MyTest extends BaseTest{
         Assert.assertTrue(true, app.statusEmail.getLbConfirmBlock());
         app.statusEmail.clickCheckMails();
         app.dashboard.btnСlickRowFirstNewLetter();
-        Assert.assertEquals(app.viewEmail.getEmailBody(), sendEmail);
+        Assert.assertEquals(app.viewEmail.getEmail(), sendEmail);
 
 
 

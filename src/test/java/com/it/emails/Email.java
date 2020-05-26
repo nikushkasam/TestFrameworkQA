@@ -1,4 +1,4 @@
-package com.it.Emails;
+package com.it.emails;
 
 import java.util.Objects;
 
