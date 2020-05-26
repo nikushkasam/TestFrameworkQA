@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.it.tests.MyTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-05-24T08:03:06" hostname="DESKTOP-LDBR4HG" time="0.845">
+  <properties/>
+  <testcase name="test1" classname="com.it.tests.MyTest" time="0.845"/>
+  <system-out><![CDATA[[User{userName='jhgwgiribb', password='qngvaoosdtfgodm', email='rjgbjgwlmu@gmail.com'}
+, User{userName='lmpaangjqd', password='orawfyxpamwoxpl', email='cleoaxolfb@gmail.com'}
+, User{userName='kamobnjity', password='yrjnntqutujuwor', email='ccjdqetkjx@gmail.com'}
+, User{userName='hjkrqvcgfu', password='rwytkprxgfyruda', email='eghvusuuin@gmail.com'}
+, User{userName='ujvbrpdlln', password='pbinpwxcoqmdtyc', email='wmcrenbyku@gmail.com'}
+, User{userName='egvalahxpc', password='vsykuuoonfkmhae', email='pjtxaybwvs@gmail.com'}
+, User{userName='phvorltcbo', password='osqquxshwrkceix', email='vjhlavrqbi@gmail.com'}
+, User{userName='ekswttjyed', password='pdovtojljxkjorj', email='wvlribsmpc@gmail.com'}
+, User{userName='ysrfyjmmrc', password='qojsjlpjeeojdjw', email='qhwkcdffvp@gmail.com'}
+, User{userName='mymbpqqwal', password='sqmnkjcqkxxnlmp', email='ovrfjrmuui@gmail.com'}
+]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
