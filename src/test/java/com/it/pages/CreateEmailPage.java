@@ -23,23 +23,23 @@ public class CreateEmailPage extends BasePage {
 
 
 
-    public void create(Email email) {
+    public void createEmail(Email email) {
         inputRecipient.sendKeys(email.letterEmail);
         inputSubject.sendKeys(email.letterSubject);
         inputDescription.sendKeys(email.letterDescription);
-        btnSend.click();
+        btnClickSend();
     }
 
     public void setInputRecipient(String email) {
         inputRecipient.sendKeys(email);
     }
 
-    public void setInputSubject(String topic) {
-        inputSubject.sendKeys(topic);
+    public void setInputSubject(String subject) {
+        inputSubject.sendKeys(subject);
     }
 
-    public void setInputDescription(String text) {
-        inputDescription.sendKeys(text);
+    public void setInputDescription(String description) {
+        inputDescription.sendKeys(description);
     }
 
     public void btnClickSend() {

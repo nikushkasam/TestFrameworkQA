@@ -1,7 +1,6 @@
 package com.it.tests;
 
 
-import com.it.Emails.EmailFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -17,7 +16,7 @@ public class MyTest extends BaseTest{
         app.login.login(validUser);
         Assert.assertEquals(app.dashboard.getLbUserEmail(), validUser.email);
         app.dashboard.btnClickCreateEmail();
-        app.email.create(sendEmail);
+        app.email.createEmail(sendEmail);
         Assert.assertTrue(true, app.statusEmail.getLbConfirmBlock());
         app.statusEmail.clickCheckMails();
         app.dashboard.btnСlickRowFirstNewLetter();

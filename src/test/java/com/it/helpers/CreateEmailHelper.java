@@ -5,8 +5,8 @@ import com.it.pages.CreateEmailPage;
 
 public class CreateEmailHelper extends CreateEmailPage {
 
-    public void create(Email email) {
-        super.create(email);
+    public void createEmail(Email email) {
+        super.createEmail(email);
     }
 
 }
