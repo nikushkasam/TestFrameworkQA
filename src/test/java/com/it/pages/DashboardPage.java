@@ -1,7 +1,18 @@
 package com.it.pages;
 
+import org.omg.CORBA.TIMEOUT;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
+import java.time.temporal.TemporalUnit;
+import java.util.NoSuchElementException;
+import java.util.concurrent.TimeUnit;
 
 public class DashboardPage extends BasePage {
 
@@ -31,7 +42,9 @@ public class DashboardPage extends BasePage {
     }
 
     public String getLbUserEmail() {
-        return lbUserEmail.getText();
+        WebDriverWait webDriverWait = new WebDriverWait(driver, 20);
+        /*WebElement lbUserEmail = webDriverWait.until(driver -> driver.findElement(By.xpath("//span[@class='sn_menu_title']")));*/
+        return webDriverWait.until(ExpectedConditions.visibilityOf(lbUserEmail)).getText();
     }
 
     public void btnClickCreateEmail() {

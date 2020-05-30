@@ -1,13 +1,13 @@
 package com.it.pages;
 
 
-import com.it.driver.DriverFactory;
-import org.openqa.selenium.WebDriver;
+
+import com.it.driver.MyDriver;
 import org.openqa.selenium.support.PageFactory;
 
 
 public class BasePage {
-    protected static WebDriver driver = DriverFactory.getDriver();
+    protected static MyDriver driver = MyDriver.getMyDriver();
 
     public BasePage() {
         PageFactory.initElements(driver, this);

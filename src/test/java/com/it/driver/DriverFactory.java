@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 
 import static com.it.common.Constants.BASE_URL;
 
-public class DriverFactory {
+ class DriverFactory {
 
     public static WebDriver getDriver() {
 
