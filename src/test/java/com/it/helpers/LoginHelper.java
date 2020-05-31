@@ -12,7 +12,6 @@ public class LoginHelper extends LoginPage {
     }
 
     public void login(User user) {
-        driver.scrollDown();
         login(user.userName,user.password);
     }
 }

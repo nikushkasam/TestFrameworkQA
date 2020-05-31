@@ -1,14 +1,17 @@
 package com.it.driver;
 
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import com.it.common.Constants;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 import static com.it.common.Constants.BASE_WAIT;
 
@@ -17,6 +20,7 @@ public class MyDriver implements WebDriver {
     private WebDriver driver;
     public WebDriverWait wait;
     private static MyDriver myDriver;
+    private static int count;
 
 
     private MyDriver() {
@@ -105,4 +109,42 @@ public class MyDriver implements WebDriver {
     public void scrollDown() {
         ((JavascriptExecutor) driver).executeScript("window.scrollTo(0,document.body.scrollHeight)");
     }
+
+    public boolean isElementPresent(By locator) {
+        boolean result = false;
+        driver.manage().timeouts().
+                implicitlyWait(0, TimeUnit.SECONDS);
+        try {
+            List<WebElement> list = driver.findElements(locator);
+            driver.manage().timeouts().
+                    implicitlyWait(Constants.BASE_WAIT, TimeUnit.SECONDS);
+            result = list.size() != 0 && list.get(0).isDisplayed();
+        } catch (StaleElementReferenceException | NoSuchElementException e) {
+            //NOP
+        }
+        return result;
+    }
+
+    /**
+     * Scroll  to Element  *  * @param element
+     */
+    public void scrollToElement(WebElement element) {
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void takeSnapShot() {
+        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        try {
+            FileUtils.copyFile(screenshot,new File("build//screenshot//screen"+count+".png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        count++;
+    }
+
 }

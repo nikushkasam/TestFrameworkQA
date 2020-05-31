@@ -12,15 +12,21 @@ public class MyTest extends BaseTest{
         /*System.out.println(UserFactory.getRandomUsers(10));*/
         /*System.out.println(EmailFactory.getRandomEmails(10));*/
 
-        app.login.login(validUser);
+        /*app.login.login(validUser);
         Assert.assertEquals(app.dashboard.getLbUserEmail(), validUser.email);
         app.dashboard.btnClickCreateEmail();
         app.email.createEmail(sendEmail);
         Assert.assertTrue(true, app.statusEmail.getLbConfirmBlock());
         app.statusEmail.clickCheckMails();
         app.dashboard.btnСlickRowFirstNewLetter();
-        Assert.assertEquals(app.viewEmail.getEmail(), sendEmail);
+        Assert.assertEquals(app.viewEmail.getEmail(), sendEmail);*/
+
+
+        app.login.login(validUser);
+        app.common.takeScreenShot();
+        Assert.assertEquals(app.dashboard.getLbUserEmail(), validUser.email);
     }
+
 
 
 }
