@@ -13,6 +13,7 @@ import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Set;
@@ -59,12 +60,17 @@ public class MyDriver implements WebDriver {
 
     @Override
     public List<WebElement> findElements(By by) {
-        return driver.findElements(by);
+        List<WebElement> webElements = new ArrayList<>();
+        driver.findElements(by).forEach(s->
+                webElements.add(new WrappedWebElement(s))
+        );
+        return webElements;
     }
 
     @Override
-    public WebElement findElement(By by) {
-        return driver.findElement(by);
+    public WrappedWebElement findElement(By by) {
+        System.out.println("hi");
+        return new WrappedWebElement(driver.findElement(by));
     }
 
     @Override

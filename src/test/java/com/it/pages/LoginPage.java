@@ -1,6 +1,7 @@
 package com.it.pages;
 
 
+import com.it.driver.WrappedWebElement;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
