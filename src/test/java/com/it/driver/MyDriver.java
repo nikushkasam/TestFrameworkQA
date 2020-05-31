@@ -2,12 +2,17 @@ package com.it.driver;
 
 
 import com.it.common.Constants;
+import io.qameta.allure.Allure;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Set;
@@ -143,6 +148,12 @@ public class MyDriver implements WebDriver {
             FileUtils.copyFile(screenshot,new File("build//screenshot//screen"+count+".png"));
         } catch (IOException e) {
             e.printStackTrace();
+        }
+        Path content = Paths.get("build//screenshot//screen" + count + ".png");
+        try (InputStream is = Files.newInputStream(content)) {
+            Allure.addAttachment("My attachment", is);
+        } catch (IOException e) {
+            //NOP
         }
         count++;
     }
