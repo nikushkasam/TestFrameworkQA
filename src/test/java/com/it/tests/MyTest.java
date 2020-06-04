@@ -1,11 +1,13 @@
 package com.it.tests;
 
 
+import com.it.utils.AllureLogger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 
 public class MyTest extends BaseTest{
+
     @Test
     public void test1()  {
 
@@ -25,6 +27,8 @@ public class MyTest extends BaseTest{
         app.login.login(validUser);
         app.common.takeScreenShot();
         Assert.assertEquals(app.dashboard.getLbUserEmail(), validUser.email);
+
+
     }
 
 

@@ -8,7 +8,8 @@ public class CommonHelper extends BasePage {
         driver.takeSnapShot();
     }
 
-    public void appStop() {
+    public void appStop()
+    {
         driver.quit();
     }
 
